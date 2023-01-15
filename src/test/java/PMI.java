@@ -41,4 +41,17 @@ public class PMI {
 
 
     }
+    public void UserSearch() throws InterruptedException {
+
+        List<WebElement> menus = _driver.findElements(By.className("oxd-main-menu-item--name"));
+        menus.get(1).click();
+
+        List<WebElement> input_fields = _driver.findElements(By.tagName("input"));
+        input_fields.get(1).sendKeys("Farjana");
+
+        Thread.sleep(2000);
+
+        List<WebElement> btn = _driver.findElements(By.className("oxd-button"));
+        btn.get(1).click();
+    }
 }

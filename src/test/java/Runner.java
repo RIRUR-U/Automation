@@ -35,4 +35,18 @@ public class Runner extends Setup {
         Assert.assertEquals(actualResult_1,expectedResult_1);
         Assert.assertEquals(actualResult_2,expectedResult_2);
     }
+     @Test(priority = 3)
+        public void UserSearch() throws InterruptedException{
+        driver.get(baseUrl);
+        PMI page = new PMI(driver);
+        page.UserViewWithSearch();
+
+        Thread.sleep(5000);
+
+        List<WebElement> responses = driver.findElements(By.className("oxd-text--span"));
+        String actualResult = responses.get(11).getText();
+        String expectedResult = "(1) Record Found";
+
+        Assert.assertEquals(actualResult,expectedResult);
+    }
 }
