@@ -11,16 +11,28 @@ public class Runner extends Setup {
     String password = "admin123";
 
     @Test(priority = 1)
-    public void Login(){
+    public void Login()
+    {
         driver.get(baseUrl);
         LoginPage page = new LoginPage(driver);
         page.Dologin(userName,password);
     }
 
     @Test(priority = 2)
-    public void CreateUser() throws InterruptedException{
+    public void CreateUser() throws InterruptedException
+    {
         driver.get(baseUrl);
         PMI page = new PMI(driver);
         page.CreateUser();
+        Thread.sleep(10000);
+
+         List<WebElement> responses = driver.findElements(By.className("oxd-text--h6"));
+        String actualResult_1 = responses.get(1).getText();
+        String actualResult_2 = responses.get(2).getText();
+        String expectedResult_1 = "Farjana Nishy";
+        String expectedResult_2 = "Personal Details";
+
+        Assert.assertEquals(actualResult_1,expectedResult_1);
+        Assert.assertEquals(actualResult_2,expectedResult_2);
     }
 }

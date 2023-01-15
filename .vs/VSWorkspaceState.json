@@ -1,6 +1,17 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\build",
+    "\\build\\tmp",
+    "\\build\\tmp\\compileJava",
+    "\\src",
+    "\\src\\main",
+    "\\src\\main\\java",
+    "\\src\\main\\java\\org",
+    "\\src\\main\\java\\org\\example",
+    "\\src\\test",
+    "\\src\\test\\java"
   ],
+  "SelectedNode": "\\src\\test\\java\\Setup.java",
   "PreviewInSolutionExplorer": false
 }
